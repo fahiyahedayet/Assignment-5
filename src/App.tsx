@@ -1,13 +1,27 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import type { Technology } from "./types/technology";
 import YourStack from "./components/YourStack";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import TechnologyCard from "./components/TechnologyCard";
 
 function App() {
   const [selectedTechs, setSelectedTechs] = useState<Technology[]>([]);
+  const [technologies, setTechnologies] = useState<Technology[]>([]);
+
+  const fetchTechnologies = async (): Promise<void> => {
+    const response = await fetch("/technologies.json");
+
+    const data: Technology[] = await response.json();
+
+    setTechnologies(data);
+  };
+
+  useEffect(() => {
+    fetchTechnologies();
+  }, []);
 
   const handleAdd = (technology: Technology) => {
     const alreadyAdded = selectedTechs.some(
@@ -25,9 +39,17 @@ function App() {
   };
 
   const handleRemove = (id: number) => {
+    const removedTech = selectedTechs.find(
+      (tech) => tech.id === id
+    );
+
     setSelectedTechs(
       selectedTechs.filter((tech) => tech.id !== id)
     );
+
+    if (removedTech) {
+      toast.info(`${removedTech.name} removed from your stack!`);
+    }
   };
 
   const handleRemoveAll = () => {
@@ -49,6 +71,17 @@ function App() {
   return (
     <div>
       <h1>Dev Stack</h1>
+
+      <div>
+        {technologies.map((technology) => (
+          <TechnologyCard
+            key={technology.id}
+            technology={technology}
+            onAdd={handleAdd}
+            selectedTechs={selectedTechs}
+          />
+        ))}
+      </div>
 
       <button onClick={() => handleAdd(react)}>
         Add React
