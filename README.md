@@ -9,9 +9,7 @@ Dev Stack allows developers to explore popular technologies, learn about them, a
 
 **Dev Stack** is a responsive web application where users can explore different technologies used in modern software development.
 
-Users can browse technology cards, view important information such as category, difficulty, and rating, and add technologies to their personal stack.
-
-The project also includes toast notifications, responsive layouts, loading states, and data fetching from a local JSON file.
+Users can browse technology cards, view important information such as category, difficulty, and rating and add technologies to their personal stack. The project also includes toast notifications, responsive layouts, loading states and data fetching from a local JSON file.
 
 ---
 
@@ -89,14 +87,6 @@ JSX stands for **JavaScript XML**. It allows us to write HTML-like code inside J
 
 And React uses JSX because it makes writing and understanding UI components easier.
 
-Example:
-
-```tsx
-const App = () => {
-  return <h1>Hello React</h1>;
-};
-```
-
 ---
 
 ## 2. What is the difference between props and state?
@@ -111,7 +101,7 @@ In this project, `selectedTechs` is state because the selected technologies can 
 
 ## 3. What does the `useState` hook do, and where did you use it in this project?
 
-`useState` allows a React component to store and update data.
+Here, `useState` allows a React component to store and update data.
 
 I used `useState` in `App.tsx` to store:
 
@@ -129,14 +119,12 @@ const [selectedTechs, setSelectedTechs] = useState<Technology[]>([]);
 
 ## 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
 
-`useEffect` is used to perform side effects in a React component.
+`useEffect` basically used to perform side effects in a React component.
 
 I used it to fetch the technology data from the local `technologies.json` file when the application loads.
 
 ```tsx
-useEffect(() => {
-  fetchTechnologies();
-}, []);
+useEffect(() => { fetchTechnologies();}, []);
 ```
 
 The empty dependency array means the effect runs when the component first loads.
@@ -147,31 +135,24 @@ The empty dependency array means the effect runs when the component first loads.
 
 React uses the `key` to identify each item in a list.
 
-It helps React understand which item was added, removed, or changed.
+It helps React to understand which item was added, removed or changed.
 
 In this project, I used the technology `id` as the key:
 
 ```tsx
-{technologies.map((technology) => (
-  <TechnologyCard
-    key={technology.id}
-    technology={technology}
-  />
-))}
+{technologies.map((technology) => (<TechnologyCard key={technology.id} technology={technology}/>))}
 ```
 
 ---
 
 ## 6. What is conditional rendering? Show one place you used it.
 
-Conditional rendering means showing different UI depending on a condition.
+Conditional rendering means showing a different UI depending on a condition.
 
-In this project, I show an empty message when the user has not selected any technology:
+In this project I showed an empty message when the user has not selected any technology:
 
 ```tsx
-{selectedTechs.length === 0 && (
-  <p>Your stack is empty.</p>
-)}
+{selectedTechs.length === 0 && (<p>Your stack is empty.</p>)}
 ```
 
 When technologies are added, the empty message disappears and the selected technologies are shown.
@@ -182,14 +163,10 @@ When technologies are added, the empty message disappears and the selected techn
 
 A parent sends data to a child using **props**.
 
-For example, `App.tsx` passes technology data to `TechnologyCard`:
+In this project `App.tsx` passes technology data to `TechnologyCard`:
 
 ```tsx
-<TechnologyCard
-  technology={technology}
-  onAdd={handleAdd}
-  selectedTechs={selectedTechs}
-/>
+<TechnologyCard technology={technology} onAdd={handleAdd}selectedTechs={selectedTechs}/>
 ```
 
 The child can send something back to the parent by calling a **function passed through props**.
@@ -249,7 +226,7 @@ Concepts practiced
 
 ---
 
-🚀 Learning Outcome
+## 🚀 Learning Outcome
 
 Through this project, I practiced turning React concepts into a functional application rather than learning them only through isolated examples.
 
