@@ -10,13 +10,20 @@ import TechnologyCard from "./components/TechnologyCard";
 function App() {
   const [selectedTechs, setSelectedTechs] = useState<Technology[]>([]);
   const [technologies, setTechnologies] = useState<Technology[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchTechnologies = async (): Promise<void> => {
-    const response = await fetch("/technologies.json");
+    try {
+      const response = await fetch("/technologies.json");
 
-    const data: Technology[] = await response.json();
+      const data: Technology[] = await response.json();
 
-    setTechnologies(data);
+      setTechnologies(data);
+    } catch (error) {
+      console.error("Failed to fetch technologies:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -57,41 +64,56 @@ function App() {
     toast.info("All technologies removed from your stack!");
   };
 
-  const react: Technology = {
-    id: 1,
-    name: "React",
-    category: "Frontend",
-    description: "A JavaScript library",
-    icon: "",
-    rating: 4.9,
-    difficulty: "Beginner-Friendly",
-    badge: "Popular",
-  };
+
 
   return (
-    <div>
-      <h1>Dev Stack</h1>
+    <div className="min-h-screen bg-gray-50">
 
-      <div>
-        {technologies.map((technology) => (
-          <TechnologyCard
-            key={technology.id}
-            technology={technology}
-            onAdd={handleAdd}
-            selectedTechs={selectedTechs}
-          />
-        ))}
+
+      <div className="mx-auto max-w-[1200px] px-6 py-10">
+        <h1 className="text-3xl font-bold text-gray-900">
+          Explore Technologies
+        </h1>
+
+        <p className="mt-2 text-gray-500">
+          Discover technologies and build your perfect development stack.
+        </p>
       </div>
 
-      <button onClick={() => handleAdd(react)}>
-        Add React
-      </button>
 
-      <YourStack
-        selectedTechs={selectedTechs}
-        onRemove={handleRemove}
-        onRemoveAll={handleRemoveAll}
-      />
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-8 px-6 pb-12 lg:grid-cols-3">
+
+        <div className="grid grid-cols-1 items-start gap-5 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-3">
+          {loading ? (
+            <div className="col-span-full py-16 text-center">
+              <p className="text-sm font-medium text-gray-500">
+                Loading technologies...
+              </p>
+            </div>
+          ) : (
+            technologies.map((technology) => (
+              <TechnologyCard
+                key={technology.id}
+                technology={technology}
+                onAdd={handleAdd}
+                selectedTechs={selectedTechs}
+              />
+            ))
+          )}
+        </div>
+
+
+        <div className="lg:col-span-1">
+          <div className="lg:sticky lg:top-24">
+            <YourStack
+              selectedTechs={selectedTechs}
+              onRemove={handleRemove}
+              onRemoveAll={handleRemoveAll}
+            />
+          </div>
+        </div>
+
+      </div>
 
       <ToastContainer />
     </div>
