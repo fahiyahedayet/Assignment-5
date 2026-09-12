@@ -6,6 +6,7 @@ import YourStack from "./components/YourStack";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TechnologyCard from "./components/TechnologyCard";
+import Footer from "./components/Footer";
 
 function App() {
   const [selectedTechs, setSelectedTechs] = useState<Technology[]>([]);
@@ -59,27 +60,27 @@ function App() {
     }
   };
 
-  const handleRemoveAll = () => {
-    setSelectedTechs([]);
-    toast.info("All technologies removed from your stack!");
+  const handleRemoveAll = () =>   {
+    setSelectedTechs([])  ;
+    toast.info ("All technologies removed from your stack!");
   };
 
 
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" >
 
 
       <div className="mx-auto max-w-[1200px] px-6 py-10">
         <h1 className="text-[36px] font-extrabold text-[#0F172A]">
-          Explore{" "}
+          Explore the{" "}
           <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
             Technologies
           </span>
         </h1>
 
         <p className="mt-2 text-[#64748B] text-[16px]">
-          Discover technologies and build your perfect development stack.
+          Pick one technology per category to build your ideal stack.
         </p>
       </div>
 
@@ -117,7 +118,7 @@ function App() {
         </div>
 
       </div>
-
+      <Footer />
       <ToastContainer />
     </div>
   );

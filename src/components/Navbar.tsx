@@ -25,7 +25,7 @@ const Navbar = () => {
                     Sign In
                 </button>
 
-                <button className="rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 px-5 py-2 text-sm font-medium text-white">
+                <button className="rounded-full bg-[#D91B7E] px-5 py-2 text-sm font-medium text-white">
                     Sign Up
                 </button>
             </div>
