@@ -67,15 +67,18 @@ function App() {
 
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
 
 
       <div className="mx-auto max-w-[1200px] px-6 py-10">
-        <h1 className="text-3xl font-bold text-gray-900">
-          Explore Technologies
+        <h1 className="text-[36px] font-extrabold text-[#0F172A]">
+          Explore{" "}
+          <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
+            Technologies
+          </span>
         </h1>
 
-        <p className="mt-2 text-gray-500">
+        <p className="mt-2 text-[#64748B] text-[16px]">
           Discover technologies and build your perfect development stack.
         </p>
       </div>
