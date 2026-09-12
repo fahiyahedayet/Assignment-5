@@ -1,4 +1,4 @@
-import './App.css'
+import "./App.css";
 import { useState } from "react";
 
 import type { Technology } from "./types/technology";
@@ -9,22 +9,33 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [selectedTechs, setSelectedTechs] = useState<Technology[]>([]);
 
-const handleAdd = (technology: Technology) => {
-  const alreadyAdded = selectedTechs.some(
-    (tech) => tech.id === technology.id
-  );
+  const handleAdd = (technology: Technology) => {
+    const alreadyAdded = selectedTechs.some(
+      (tech) => tech.id === technology.id
+    );
 
-  if (alreadyAdded) {
-    toast.warning(`${technology.name} is already in your stack!`);
-    return;
-  }
+    if (alreadyAdded) {
+      toast.warning(`${technology.name} is already in your stack!`);
+      return;
+    }
 
-  setSelectedTechs([...selectedTechs, technology]);
+    setSelectedTechs([...selectedTechs, technology]);
 
-  toast.success(`${technology.name} added to your stack!`);
-};
+    toast.success(`${technology.name} added to your stack!`);
+  };
 
- const react: Technology = {
+  const handleRemove = (id: number) => {
+    setSelectedTechs(
+      selectedTechs.filter((tech) => tech.id !== id)
+    );
+  };
+
+  const handleRemoveAll = () => {
+    setSelectedTechs([]);
+    toast.info("All technologies removed from your stack!");
+  };
+
+  const react: Technology = {
     id: 1,
     name: "React",
     category: "Frontend",
@@ -43,7 +54,12 @@ const handleAdd = (technology: Technology) => {
         Add React
       </button>
 
-      <YourStack selectedTechs={selectedTechs} />
+      <YourStack
+        selectedTechs={selectedTechs}
+        onRemove={handleRemove}
+        onRemoveAll={handleRemoveAll}
+      />
+
       <ToastContainer />
     </div>
   );
