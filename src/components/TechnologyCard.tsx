@@ -22,9 +22,7 @@ interface TechnologyCardProps {
 }
 
 const TechnologyCard = ({
-    technology,
-    onAdd,
-    selectedTechs,
+    technology, onAdd, selectedTechs,
 }: TechnologyCardProps) => {
     const isAdded = selectedTechs.some(
         (tech) => tech.id === technology.id
@@ -72,9 +70,7 @@ const TechnologyCard = ({
 
                     {technology.badge && (
                         <span
-                            className={`rounded-full px-3 py-1 text-xs font-semibold ${badgeColorMap[iconKey] || "bg-gray-100 text-gray-600"
-                                }`}
-                        >
+                            className={`rounded-full px-3 py-1 text-xs font-semibold  ${badgeColorMap[iconKey] || "bg-gray-100 text-gray-600"}`}>
                             {technology.badge}
                         </span>
                     )}
@@ -108,11 +104,7 @@ const TechnologyCard = ({
                 <button
                     onClick={() => onAdd(technology)}
                     disabled={isAdded}
-                    className={`mt-4 w-full rounded-xl py-3 text-sm font-semibold transition ${isAdded
-                            ? "cursor-not-allowed border border-pink-200 bg-white text-pink-500"
-                            : "bg-gray-900 text-white hover:bg-gray-800"
-                        }`}
-                >
+                    className={`mt-4 w-full rounded-xl py-3 text-sm font-semibold transition ${isAdded ? "cursor-not-allowed border border-pink-200 bg-white text-pink-500" : "bg-gray-900 text-white hover:bg-gray-800"}`} >
                     {isAdded ? "✓ Added to Stack" : "Add to Stack"}
                 </button>
             </div>

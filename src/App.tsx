@@ -21,6 +21,7 @@ function App() {
 
       setTechnologies(data);
     } catch (error) {
+
       console.error("Failed to fetch technologies:", error);
     } finally {
       setLoading(false);
@@ -60,9 +61,9 @@ function App() {
     }
   };
 
-  const handleRemoveAll = () =>   {
-    setSelectedTechs([])  ;
-    toast.info ("All technologies removed from your stack!");
+  const handleRemoveAll = () => {
+    setSelectedTechs([]);
+    toast.info("All technologies removed from your stack!");
   };
 
 
@@ -73,15 +74,10 @@ function App() {
 
       <div className="mx-auto max-w-[1200px] px-6 py-10">
         <h1 className="text-[36px] font-extrabold text-[#0F172A]">
-          Explore the{" "}
-          <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
-            Technologies
-          </span>
+          Explore the{" "}<span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">Technologies</span>
         </h1>
 
-        <p className="mt-2 text-[#64748B] text-[16px]">
-          Pick one technology per category to build your ideal stack.
-        </p>
+        <p className="mt-2 text-[#64748B] text-[16px]">Pick one technology per category to build your ideal stack.</p>
       </div>
 
 
@@ -96,12 +92,7 @@ function App() {
             </div>
           ) : (
             technologies.map((technology) => (
-              <TechnologyCard
-                key={technology.id}
-                technology={technology}
-                onAdd={handleAdd}
-                selectedTechs={selectedTechs}
-              />
+              <TechnologyCard key={technology.id}technology={technology}onAdd={handleAdd}selectedTechs={selectedTechs}/>
             ))
           )}
         </div>
@@ -109,11 +100,7 @@ function App() {
 
         <div className="lg:col-span-1">
           <div className="lg:sticky lg:top-24">
-            <YourStack
-              selectedTechs={selectedTechs}
-              onRemove={handleRemove}
-              onRemoveAll={handleRemoveAll}
-            />
+            <YourStack selectedTechs={selectedTechs}onRemove={handleRemove}onRemoveAll={handleRemoveAll}/>
           </div>
         </div>
 

@@ -30,64 +30,54 @@ The project also includes toast notifications, responsive layouts, loading state
 
 ## 🌟 Features
 
-✨ Features
+### 🔍 01 — Explore Technologies
 
-<table> <tr> <td width="50%">
+Discover technologies across different areas of modern development, including:
 
-🔍 Explore Technologies
+`Frontend` · `Backend` · `Database` · `Languages` · `Styling` · `DevOps`
 
-Browse technologies from different areas of development:
+Each technology comes with useful information such as:
 
-🎨 Frontend
-⚙️ Backend
-🗄️ Database
-💻 Programming Languages
-🎭 Styling
-☁️ DevOps
+* 🖼️ Technology icon
+* 📌 Category
+* 📝 Description
+* 📊 Difficulty level
+* ⭐ Rating
+* 🏷️ Badge
 
-Each technology card includes:
+---
 
-Technology icon
-Name
-Category
-Description
-Difficulty
-Rating
-Badge
+### 🧩 02 — Build Your Own Stack
 
-</td>
+Create a personalized **Your Stack** by selecting the technologies you want to work with.
 
-<td width="50%">
+**You can:**
 
-🧩 Build Your Own Stack
+`➕ Add` → `🚫 Avoid Duplicates` → `🗑️ Remove` → `🧹 Remove All`
 
-Create your personalized Your Stack section.
+Your selected technologies are updated dynamically as you interact with the application.
 
-You can:
+---
 
-➕ Add technologies
-🚫 Prevent duplicates
-🗑️ Remove individual technologies
-🧹 Remove all technologies
-📋 View your selected technologies
+### 🔔 03 — Interactive Feedback
 
-Your stack updates dynamically as you interact with the application.
+Every important action provides immediate visual feedback through toast notifications.
 
-</td> </tr>
+| Action                | Result                 |
+| :-------------------- | :--------------------- |
+| ➕ Add technology      | ✅ Successfully added   |
+| 🔁 Add duplicate      | ⚠️ Duplicate warning   |
+| 🗑️ Remove technology | ✅ Successfully removed |
+| 🧹 Remove all         | ✅ Stack cleared        |
 
-<tr> <td colspan="2">
+---
 
-🔔 Interactive User Feedback
+### ⚡ Built for Practice
 
-The application provides toast notifications to clearly communicate important actions.
+This project was designed not only as a technology explorer, but also as a practical way to strengthen core React concepts through a real, interactive application.
 
-Action	Feedback
-➕ Add technology	Technology added successfully
-🔁 Add duplicate	Duplicate technology warning
-🗑️ Remove technology	Technology removed
-🧹 Remove all	All technologies removed
+**Components · Props · State · Hooks · Events · TypeScript · Responsive UI**
 
-</td> </tr> </table>
 
 ---
 
@@ -242,35 +232,20 @@ public/
 
 ## 💡 Project Goal
 
-The main goal of this project was to practice building a real-world React application using:
+The main goal of Dev Stack was to practice building a real-world React application while strengthening my understanding of fundamental frontend concepts.
 
-* Components
-* Props
-* State
-* Hooks
-* TypeScript
-* JSON data
-* Event handling
-* Conditional rendering
-* Responsive design
-
----
-
-🎨 Design Philosophy
-
-The project follows a clean and modern interface with a vibrant gradient-inspired visual identity.
-
-Color Direction
-
-<div align="center">
-
-#FF5722 Orange → #D81B7E Pink → #7C3AED Purple
-
-</div>
-
-The goal was to keep the interface:
-
-Modern · Colorful · Responsive · Simple · Interactive
+Concepts practiced
+⚛️ React Components
+📦 Props
+🔄 State Management
+🪝 React Hooks
+🔷 TypeScript
+📄 JSON Data
+🖱️ Event Handling
+🔀 Conditional Rendering
+📱 Responsive Design
+🔔 User Feedback
+🧩 Component Reusability
 
 ---
 
