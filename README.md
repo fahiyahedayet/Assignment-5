@@ -249,26 +249,6 @@ Concepts practiced
 
 ---
 
-🎨 Design Philosophy
-
-The project follows a clean and modern interface with a vibrant gradient-inspired visual identity.
-
-<div align="center">
-
-#FF5722 Orange → #D81B7E Pink → #7C3AED Purple
-
-<br>
-
-Modern · Colorful · Responsive · Simple · Interactive
-
-</div>
-
-The goal was to keep the interface:
-
-Modern · Colorful · Responsive · Simple · Interactive
-
----
-
 🚀 Learning Outcome
 
 Through this project, I practiced turning React concepts into a functional application rather than learning them only through isolated examples.
