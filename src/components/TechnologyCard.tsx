@@ -104,7 +104,7 @@ const TechnologyCard = ({
                 <button
                     onClick={() => onAdd(technology)}
                     disabled={isAdded}
-                    className={`mt-4 w-full rounded-xl py-3 text-sm font-semibold transition ${isAdded ? "cursor-not-allowed border border-pink-200 bg-white text-pink-500" : "bg-gray-900 text-white hover:bg-gray-800"}`} >
+                    className={`mt-4 w-full rounded-xl cursor-pointer py-3 text-sm font-semibold transition ${isAdded ? "cursor-not-allowed border border-pink-200 bg-white text-pink-500" : "bg-gray-900 text-white hover:bg-gray-800"}`} >
                     {isAdded ? "✓ Added to Stack" : "Add to Stack"}
                 </button>
             </div>
