@@ -62,12 +62,12 @@ const YourStack = ({
                   </div>
                 </div>
 
-                <button onClick={() => onRemove(tech.id)}className="text-xl text-gray-300 transition hover:text-red-500">×</button>
+                <button onClick={() => onRemove(tech.id)}className="text-xl text-gray-300 cursor-pointer transition hover:text-red-500">×</button>
               </div>
             ))}
           </div>
 
-          <button onClick={onRemoveAll}className="mt-5 w-full rounded-xl border border-gray-200 bg-white py-3 text-sm font-semibold text-gray-500 transition hover:border-red-200 hover:text-red-500">Remove All
+          <button onClick={onRemoveAll}className="mt-5 w-full rounded-xl cursor-pointer border border-gray-200 bg-white py-3 text-sm font-semibold text-gray-500 transition hover:border-red-200 hover:text-red-500">Remove All
           </button>
         </div>
       )}
