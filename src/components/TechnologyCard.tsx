@@ -1,6 +1,6 @@
 import type { Technology } from "../types/technology";
 
-import { FaReact, FaNodeJs, FaGitAlt, FaJava } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaJava } from "react-icons/fa";
 import {
     SiVuedotjs,
     SiSvelte,
