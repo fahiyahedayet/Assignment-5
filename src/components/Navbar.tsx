@@ -21,7 +21,7 @@ const Navbar = () => {
             </nav>
 
             <div className ="flex items-center gap-3">
-                <button className ="cursor-pointer hidden text-sm text-gray-600 sm:block hover:text-pink-500">
+                <button className ="cursor-pointer text-sm text-gray-600 sm:block hover:text-pink-500">
                     Sign In
                 </button>
 
