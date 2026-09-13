@@ -21,11 +21,11 @@ const Navbar = () => {
             </nav>
 
             <div className ="flex items-center gap-3">
-                <button className ="hidden text-sm text-gray-600 sm:block hover:text-pink-500">
+                <button className ="cursor-pointer hidden text-sm text-gray-600 sm:block hover:text-pink-500">
                     Sign In
                 </button>
 
-                <button className="rounded-full bg-[#D91B7E] px-5 py-2 text-sm font-medium text-white">
+                <button className="cursor-pointer rounded-full bg-gradient-to-r from-orange-500 via-[#FF5722] to-[#EC4899] px-5 py-2 text-sm font-medium text-white transition hover:opacity-90">
                     Sign Up
                 </button>
             </div>
