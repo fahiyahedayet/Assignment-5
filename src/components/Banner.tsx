@@ -18,11 +18,11 @@ const Banner = () => {
                     </p>
 
                     <div className="mt-8 flex flex-wrap gap-3">
-                        <button className="rounded-lg bg-gradient-to-r from-orange-500 via-[#FF5722] to-[#EC4899] px-5 py-3 text-sm font-medium text-white transition hover:opacity-90">
+                        <button className="cursor-pointer w-[190px] rounded-lg bg-gradient-to-r from-orange-500 via-[#FF5722] to-[#EC4899] py-3 text-sm font-medium text-white transition hover:opacity-90">
                             Explore Technologies
                         </button>
 
-                        <button className="rounded-lg border border-gray-200 bg-white px-5 py-3 text-sm text-gray-600 transition hover:border-gray-300">
+                        <button className="cursor-pointer w-[190px] rounded-lg border border-gray-200 bg-white py-3 text-sm text-gray-600 transition hover:border-gray-300">
                             Learn More
                         </button>
                     </div>
